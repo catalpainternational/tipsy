@@ -84,7 +84,13 @@
                     );
                 }
 
-                var pos = $.extend({}, this.$element.offset(), {
+                // use native JS instead of .offset(), which doesn't work on Safari for SVG
+                // see https://stackoverflow.com/q/54790402/2805085
+                var rect = this.$element[0].getBoundingClientRect();
+                var win = this.$element[0].ownerDocument.defaultView;
+                var offset = { top: rect.top + win.pageYOffset, left: rect.left + win.pageXOffset };
+
+                var pos = $.extend({}, offset, {
                     width: this.$element[0].getBoundingClientRect().width,
                     height: this.$element[0].getBoundingClientRect().height
                 });
