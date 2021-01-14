@@ -3,13 +3,12 @@
 // (c) 2008-2010 jason frame [jason@onehackoranother.com]
 // released under the MIT license
 //
-// Modified by Atlassian
-// https://github.com/atlassian/tipsy
+// Modified by Catalpa
+// https://github.com/catalpainternational/tipsy
 
 (function($) {
-    var liveBindingWarning =
-        "To be compatible with jQuery 1.9 and higher," +
-        " You must pass a selector to tipsy's live argument." +
+    var liveBindingWarning = "To be compatible with jQuery 1.9 and higher,";
+    " You must pass a selector to tipsy's live argument." +
         " For instance, `$(document).tipsy({live: 'a.live'});`";
 
     function maybeCall(thing, ctx) {
